@@ -1,9 +1,12 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useContext, useRef } from "react";
 
 const AppContext = React.createContext();
 
 const AppProvider = ({ children }) => {
   const [theme, setTheme] = useState("light-mode");
+  const refHome = useRef(null);
+  const refProjects = useRef(null);
+  const refAbout = useRef(null);
 
   const toggleMode = (e) => {
     e.preventDefault();
@@ -17,8 +20,37 @@ const AppProvider = ({ children }) => {
     }
     document.documentElement.classList = theme;
   };
+  const homeOn = () => {
+    refHome.current.style.textAlign = "right";
+    refProjects.current.style.textAlign = "left";
+    refAbout.current.style.textAlign = "left";
+  };
+
+  const projectOn = () => {
+    refHome.current.style.textAlign = "left";
+    refProjects.current.style.textAlign = "right";
+    refAbout.current.style.textAlign = "left";
+  };
+
+  const aboutOn = () => {
+    refHome.current.style.textAlign = "left";
+    refProjects.current.style.textAlign = "left";
+    refAbout.current.style.textAlign = "right";
+  };
   return (
-    <AppContext.Provider value={{ toggleMode }}>{children}</AppContext.Provider>
+    <AppContext.Provider
+      value={{
+        toggleMode,
+        refHome,
+        refProjects,
+        refAbout,
+        homeOn,
+        projectOn,
+        aboutOn,
+      }}
+    >
+      {children}
+    </AppContext.Provider>
   );
 };
 

@@ -1,7 +1,23 @@
 import React from "react";
+import { useHistory } from "react-router";
+import { useGlobalContext } from "./context";
+
 const About = () => {
+  const { projectOn } = useGlobalContext();
+  const history = useHistory();
+  const handlewheel = (e) => {
+    if (e.deltaY < 0) {
+      history.push("/projects");
+      projectOn();
+    }
+  };
   return (
-    <div className="about">
+    <div
+      className="about"
+      onWheel={(e) => {
+        handlewheel(e);
+      }}
+    >
       <div className="project-title">
         <h1>About</h1>
       </div>
