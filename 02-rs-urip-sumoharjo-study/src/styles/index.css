@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap");
 :root {
   --light1: #fefefc;
   --light2: #ebf1df;
@@ -6,12 +7,13 @@
   --dark2: #0e210f;
   --dark3: #3f4a3c;
   --dark4: #3e4a3d;
-  --green1: #7aad6b;
+  --green1: #80ad6b;
   --green2: #9dc092;
   --green3: #2a8d38;
   --yellow: #f7f760;
   --accent: #cea7a0;
   --font-family: "Lato", sans-serif;
+  --secondary-font: "Tenor Sans", sans-serif;
   --transition: all 0.4s linear;
 }
 
@@ -20,6 +22,24 @@
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+h1 {
+  letter-spacing: 0.2rem;
+  font-size: 2.2rem;
+  font-weight: 600;
+}
+
+h2 {
+  letter-spacing: 0.1rem;
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+
+h3 {
+  letter-spacing: 0.1rem;
+  font-size: 1.4rem;
+  font-weight: 400;
 }
 
 body {
@@ -106,15 +126,13 @@ body::-webkit-scrollbar {
 
 .home-welcome .home-title {
   color: var(--light1);
-  font-weight: 500;
-  letter-spacing: 0.2rem;
   margin-bottom: 1rem;
+  font-family: var(--secondary-font);
+  text-transform: uppercase;
 }
 
 .home-welcome .home-text {
   color: var(--light1);
-  font-weight: 400;
-  letter-spacing: 0.1rem;
 }
 
 .exclusive-menu {
@@ -131,11 +149,18 @@ body::-webkit-scrollbar {
 }
 
 .ex-menu {
+  text-decoration: none;
+  text-align: center;
   width: 100%;
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-size: 2.2rem;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -146,9 +171,10 @@ body::-webkit-scrollbar {
   border: 1px solid var(--green2);
   color: var(--light1);
   text-transform: capitalize;
-  font-size: 1.5rem;
   -webkit-transition: var(--transition);
   transition: var(--transition);
+  -webkit-box-shadow: 0px 1px 4px 0px var(--dark3);
+          box-shadow: 0px 1px 4px 0px var(--dark3);
 }
 
 .ex-menu:hover {
@@ -157,13 +183,51 @@ body::-webkit-scrollbar {
 
 .promo {
   width: 100%;
-  height: 3rem;
+  min-height: 3rem;
   background-color: var(--green1);
+  color: var(--dark2);
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
+  line-height: 3rem;
+  padding: 0 3rem;
+  overflow: hidden;
+}
+
+.promo-title {
+  width: 100%;
+  min-height: 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.promo-title h4 {
+  letter-spacing: 0.2rem;
+}
+
+.promo-btn {
+  background-color: transparent;
+  border: transparent;
+  font-size: 1.5rem;
+  color: var(--dark2);
   -webkit-transition: var(--transition);
   transition: var(--transition);
 }
 
-.promo:hover {
-  height: 10rem;
+.promo-btn:hover {
+  color: var(--dark3);
+}
+
+.promo-info {
+  width: 100%;
+  height: 15rem;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
 }
 /*# sourceMappingURL=index.css.map */
