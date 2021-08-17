@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { main_menu } from "./data_menu";
 
 const Menu = ({ url }) => {
   const [newUrl, setNewUrl] = useState("");
@@ -13,30 +14,19 @@ const Menu = ({ url }) => {
   }, [url]);
   return (
     <div className="exclusive-menu">
-      <Link to={`${newUrl}/rawatInap`} className="ex-menu rawat-inap">
-        <i className="fa fa-bed"></i>
-        <h2>rawat inap</h2>
-      </Link>
-      <Link to={`${newUrl}/pelayanan`} className="ex-menu pelayanan">
-        <i className="fa fa-stethoscope"></i>
-        <h2>pelayanan</h2>
-      </Link>
-      <Link to={`${newUrl}/dokter`} className="ex-menu dokter">
-        <i className="fa fa-user-md"></i>
-        <h2>cari dokter</h2>
-      </Link>
-      <Link to={`${newUrl}/daftarPasien`} className="ex-menu daftar-pasien">
-        <i className="fa fa-address-card"></i>
-        <h2>daftar pasien</h2>
-      </Link>
-      <Link to={`${newUrl}/checkup`} className="ex-menu checkup">
-        <i className="fa fa-money"></i>
-        <h2>promo checkup</h2>
-      </Link>
-      <Link to={`${newUrl}/dataPasien`} className="ex-menu data-pasien">
-        <i className="fa fa-clipboard"></i>
-        <h2>Data Pasien</h2>
-      </Link>
+      {main_menu.map((menu) => {
+        const { id, url, title, icon, className } = menu;
+        return (
+          <Link
+            key={id}
+            to={`${newUrl}/${url}`}
+            className={`ex-menu ${className}`}
+          >
+            <i className={icon}></i>
+            <h2>{title}</h2>
+          </Link>
+        );
+      })}
     </div>
   );
 };

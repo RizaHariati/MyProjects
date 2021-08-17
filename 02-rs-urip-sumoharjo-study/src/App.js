@@ -5,7 +5,7 @@ import About from "./pages/About";
 import Main1 from "./pages/Main1";
 import Main2 from "./pages/Main2";
 import Nav from "./component-main/Nav";
-
+import { useGlobalContext } from "./context";
 const App = () => {
   return (
     <Router>
