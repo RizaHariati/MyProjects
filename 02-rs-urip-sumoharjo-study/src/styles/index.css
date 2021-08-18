@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap");
 :root {
   --light1: #fefefc;
-  --light2: #ebf1df;
+  --light2: white;
   --dark1: #716746;
   --dark2: #0e210f;
   --dark3: #3f4a3c;
@@ -11,12 +11,15 @@
   --green2: #9dc092;
   --green3: #2a8d38;
   --yellow: #f7f760;
-  --accent: #80ad6b;
+  --accent: red;
+  --accent-hover: rgb(202, 4, 4);
   --font-family: "Lato", sans-serif;
   --secondary-font: "Tenor Sans", sans-serif;
-  --transition: all 0.4s linear;
+  --transition: all 0.4s ease-in-out;
   --border: 1px solid var(--light1);
   --radius: 2px;
+  --radius-big: 5px;
+  --box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.253);
 }
 
 * {
@@ -45,6 +48,12 @@ h3 {
   font-weight: 400;
 }
 
+h4 {
+  letter-spacing: 0.05rem;
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+
 body {
   width: 100%;
   height: 100vh;
@@ -69,8 +78,10 @@ body::-webkit-scrollbar {
   height: calc(100vh - 8rem);
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 60% 40%;
-      grid-template-columns: 60% 40%;
+  -ms-grid-columns: 65% 35%;
+      grid-template-columns: 65% 35%;
+  -webkit-box-shadow: inset 2px 7px 6px 5px rgba(0, 0, 0, 0.568);
+          box-shadow: inset 2px 7px 6px 5px rgba(0, 0, 0, 0.568);
 }
 
 .navbar {
@@ -87,6 +98,9 @@ body::-webkit-scrollbar {
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding: 0 2rem;
+  z-index: 3;
+  -webkit-box-shadow: inset 0px 1px 4px 1px rgba(0, 0, 0, 0.568);
+          box-shadow: inset 0px 1px 4px 1px rgba(0, 0, 0, 0.568);
 }
 
 .logo img {
@@ -191,50 +205,24 @@ body::-webkit-scrollbar {
 
 .banner {
   width: 100%;
-  height: calc(100vh - 9rem);
+  height: calc(100vh - 8rem);
   overflow: hidden;
   overflow-y: auto;
 }
 
-.home {
-  position: relative;
-  width: 100%;
-  height: 100%;
+.banner::-webkit-scrollbar {
+  width: 0.5rem;
+  border-radius: var(--radius);
+  background-color: var(--green2);
+  -webkit-box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.479);
+          box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.479);
 }
 
-.home-image {
-  width: 100%;
-  height: 100%;
-  background-color: #0e210f;
-  overflow: hidden;
-}
-
-.home-image img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: 0 -13rem;
-     object-position: 0 -13rem;
-}
-
-.home-welcome {
-  position: absolute;
-  width: 70%;
-  bottom: 5rem;
-  right: 2rem;
-  text-align: right;
-}
-
-.home-welcome .home-title {
-  color: var(--light1);
-  margin-bottom: 1rem;
-  font-family: var(--secondary-font);
-  text-transform: uppercase;
-}
-
-.home-welcome .home-text {
-  color: var(--light1);
+.banner::-webkit-scrollbar-thumb {
+  background-color: var(--light2);
+  border-radius: var(--radius);
+  -webkit-box-shadow: inset 0 0px 2px 1px rgba(0, 0, 0, 0.432);
+          box-shadow: inset 0 0px 2px 1px rgba(0, 0, 0, 0.432);
 }
 
 .exclusive-menu {
@@ -281,6 +269,11 @@ body::-webkit-scrollbar {
 
 .ex-menu:hover {
   background-color: var(--green2);
+}
+
+.ex-menu-content {
+  width: 100%;
+  background-color: var(--light1);
 }
 
 .promo {
@@ -426,5 +419,244 @@ body::-webkit-scrollbar {
 
 .promo-info-text h4 {
   font-weight: 400;
+}
+
+.home {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.home-image {
+  width: 100%;
+  height: 100%;
+  background-color: #0e210f;
+  overflow: hidden;
+}
+
+.home-image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 0 -13rem;
+     object-position: 0 -13rem;
+}
+
+.home-welcome {
+  position: absolute;
+  width: 70%;
+  bottom: 5rem;
+  right: 2rem;
+  text-align: right;
+}
+
+.home-welcome .home-title {
+  color: var(--light1);
+  margin-bottom: 1rem;
+  font-family: var(--secondary-font);
+  text-transform: uppercase;
+}
+
+.home-welcome .home-text {
+  color: var(--light1);
+}
+
+.ex-menu-content {
+  background-color: var(--light1);
+  padding: 2rem;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  grid-gap: 2rem;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.ex-menu-header {
+  width: 100%;
+}
+
+.ex-menu-header .line {
+  display: block;
+  margin: auto;
+  width: 100px;
+  height: 2px;
+  background-color: var(--green1);
+  margin-bottom: 1rem;
+}
+
+.ex-menu-intro {
+  width: 80%;
+  margin: auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 35% 65%;
+      grid-template-columns: 35% 65%;
+  grid-gap: 2rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.ex-menu-intro .image {
+  width: 100%;
+  min-width: 250px;
+  height: 200px;
+}
+
+.ex-menu-intro .image img {
+  width: 100%;
+  height: 100%;
+  -o-object-position: center;
+     object-position: center;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.ex-menu-intro .info {
+  width: 90%;
+  text-align: justify;
+}
+
+.rawat-inap-pilihan {
+  width: 85%;
+  margin: auto;
+}
+
+.rawat-inap-rooms {
+  margin-top: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  grid-gap: 1.5rem;
+  width: 100%;
+}
+
+.rawat-inap-room {
+  background-color: var(--light2);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  border-radius: var(--radius);
+  -webkit-box-shadow: var(--box-shadow);
+          box-shadow: var(--box-shadow);
+  overflow: hidden;
+}
+
+.rawat-inap-info {
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  height: auto;
+  -ms-grid-columns: 65% 35%;
+      grid-template-columns: 65% 35%;
+  place-items: center;
+  border-bottom: 0.5px solid var(--green2);
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
+}
+
+.rawat-inap-info .image {
+  width: 100%;
+  height: 100%;
+}
+
+.rawat-inap-info .image img {
+  width: 100%;
+  height: 100%;
+  -o-object-position: center;
+     object-position: center;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.rawat-inap-info .info {
+  padding: 1rem;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.rawat-inap-info .info .btn {
+  font-variant: small-caps;
+  font-weight: 300;
+  color: var(--accent);
+  font-size: 1rem;
+  margin-top: 1rem;
+  background-color: transparent;
+  border: transparent;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
+}
+
+.rawat-inap-info .info .btn:hover {
+  color: var(--accent-hover);
+  font-weight: 700;
+}
+
+.rawat-inap-info .info p {
+  font-size: 0.8rem;
+}
+
+.rawat-inap-detail {
+  width: 100%;
+  height: auto;
+  opacity: 1;
+  width: 100%;
+}
+
+.rawat-inap-detail ul {
+  width: 100%;
+  padding: 2rem;
+  list-style: none;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+}
+
+.rawat-inap-detail ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  line-height: 2rem;
+}
+
+.rawat-inap-detail ul li h2 {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  background-color: var(--green1);
+  color: var(--light2);
+  margin-right: 0.5rem;
+}
+
+.rawat-inap-detail ul li p {
+  text-align: left;
+  font-size: 0.8rem;
 }
 /*# sourceMappingURL=index.css.map */

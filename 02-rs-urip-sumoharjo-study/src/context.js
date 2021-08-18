@@ -1,5 +1,6 @@
 import React, { useState, useContext, useRef } from "react";
-import { nav_menu } from "./data_menu";
+import { nav_menu } from "./data/data_menu";
+import { data_inap } from "./data/data_inap";
 const AppContext = React.createContext();
 const AppProvider = ({ children }) => {
   const [isPromo, setIsPromo] = useState(true);

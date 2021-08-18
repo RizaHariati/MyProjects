@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { main_menu } from "./data_menu";
+import { main_menu } from "./data/data_menu";
 
 const Menu = ({ url }) => {
   const [newUrl, setNewUrl] = useState("");

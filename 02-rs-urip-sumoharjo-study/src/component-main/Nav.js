@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useGlobalContext } from "../context";
-import { nav_menu } from "../data_menu";
+import { nav_menu } from "../data/data_menu";
 const Nav = () => {
   const { showNavLink, isSubmenu } = useGlobalContext();
   const handleMouse = (e) => {
