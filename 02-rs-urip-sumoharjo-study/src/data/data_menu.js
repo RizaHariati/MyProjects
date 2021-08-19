@@ -1,24 +1,24 @@
 const main_menu = [
   {
     id: "menu0",
-    url: "rawatInap",
-    title: "rawat inap",
-    icon: "fa fa-bed",
-    class: "rawat-inap",
+    url: "dokter",
+    title: "cari dokter",
+    icon: "fa fa-user-md",
+    class: "dokter",
   },
   {
     id: "menu1",
     url: "pelayanan",
-    title: "pelayanan",
+    title: "pelayanan & fasilitas",
     icon: "fa fa-stethoscope",
     class: "pelayanan",
   },
   {
     id: "menu2",
-    url: "dokter",
-    title: "cari dokter",
-    icon: "fa fa-user-md",
-    class: "dokter",
+    url: "rawatInap",
+    title: "rawat inap",
+    icon: "fa fa-bed",
+    class: "rawat-inap",
   },
   {
     id: "menu3",

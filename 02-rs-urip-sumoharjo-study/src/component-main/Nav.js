@@ -28,7 +28,7 @@ const Nav = () => {
             <li key={id} id={id} onMouseOver={(e) => handleMouse(e)}>
               <button className={btn}>
                 <i className={icon}></i>
-                {title}
+                <h4>{title}</h4>
               </button>
             </li>
           );
@@ -36,8 +36,7 @@ const Nav = () => {
         <li>
           <button className="nav-btn">
             <Link to="/" className="main-link">
-              <i className="fa fa-home"></i>
-              home
+              <i className="fa fa-home" style={{ fontSize: "2rem" }}></i>
             </Link>
           </button>
         </li>

@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { data_inap } from "../data/data_inap";
-import { useGlobalContext } from "../context";
 
 const RawatInap = () => {
   return (
     <div className="banner ex-menu-content">
+      <div className="background-utama"></div>
       <div className="ex-menu-header">
         <h1>Rawat Inap</h1>
         <div className="line" />
@@ -52,7 +52,7 @@ export default RawatInap;
 
 const RawatInapRoom = ({ id, kelas, pasien, harga, img, fasilitas }) => {
   const [showRoomDetail, setShowRoomDetail] = useState(false);
-  const [roomDetail, setRoomDetail] = useState({});
+
   const toggleRoomDetail = (e) => {
     console.log(e);
     setShowRoomDetail(!showRoomDetail);

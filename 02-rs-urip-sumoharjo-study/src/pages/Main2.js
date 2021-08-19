@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Route, Switch, useRouteMatch } from "react-router-dom";
 import Home from "../component-menu/Home";
 import Menu from "../Menu";
@@ -14,33 +14,37 @@ const Main = () => {
   const { hideSubmenu } = useGlobalContext();
   return (
     <div className="container" onMouseOver={hideSubmenu}>
-      <Switch>
-        <Route exact path={`${url}`}>
-          <Home />
-        </Route>
-        <Route path={`${url}/rawatinap`}>
-          <RawatInap />
-        </Route>
-        <Route path={`${url}/pelayanan`}>
-          <Pelayanan />
-        </Route>
-        <Route path={`${url}/dokter`}>
-          <Dokter />
-        </Route>
-        <Route path={`${url}/daftarpasien`}>
-          <DaftarPasien />
-        </Route>
-        <Route path={`${url}/checkup`}>
-          <Checkup />
-        </Route>
-        <Route path={`${url}/dataPasien`}>
-          <DataPasien />
-        </Route>
-        <Route path="*">
-          <Home></Home>
-        </Route>
-      </Switch>
-      <Menu url={url} />
+      <div className="banner">
+        <Switch>
+          <Route exact path={`${url}`}>
+            <Home />
+          </Route>
+          <Route path={`${url}/rawatinap`}>
+            <RawatInap />
+          </Route>
+          <Route path={`${url}/pelayanan`}>
+            <Pelayanan />
+          </Route>
+          <Route path={`${url}/dokter`}>
+            <Dokter />
+          </Route>
+          <Route path={`${url}/daftarpasien`}>
+            <DaftarPasien />
+          </Route>
+          <Route path={`${url}/checkup`}>
+            <Checkup />
+          </Route>
+          <Route path={`${url}/dataPasien`}>
+            <DataPasien />
+          </Route>
+          <Route path="*">
+            <Home />
+          </Route>
+        </Switch>
+      </div>
+      <div className="exclusive-menu">
+        <Menu url={url} />
+      </div>
     </div>
   );
 };

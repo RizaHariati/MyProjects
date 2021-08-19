@@ -16,8 +16,12 @@ const Main = () => {
   }, [url]);
   return (
     <div className="container" onMouseOver={hideSubmenu}>
-      <Home />
-      <Menu url={newUrl} />
+      <div className="banner ">
+        <Home />
+      </div>
+      <div className="exclusive-menu">
+        <Menu url={newUrl} />
+      </div>
     </div>
   );
 };

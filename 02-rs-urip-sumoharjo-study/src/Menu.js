@@ -13,7 +13,7 @@ const Menu = ({ url }) => {
     }
   }, [url]);
   return (
-    <div className="exclusive-menu">
+    <>
       {main_menu.map((menu) => {
         const { id, url, title, icon, className } = menu;
         return (
@@ -27,7 +27,7 @@ const Menu = ({ url }) => {
           </Link>
         );
       })}
-    </div>
+    </>
   );
 };
 

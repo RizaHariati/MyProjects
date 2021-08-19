@@ -2,7 +2,7 @@ import React from "react";
 
 const Home = () => {
   return (
-    <div className="banner home">
+    <div className="home">
       <div className="home-image">
         <img src="/assets/images/anthony-shkraba.jpg" alt="main model" />
       </div>

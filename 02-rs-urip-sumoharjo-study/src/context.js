@@ -1,9 +1,8 @@
 import React, { useState, useContext, useRef } from "react";
 import { nav_menu } from "./data/data_menu";
-import { data_inap } from "./data/data_inap";
 const AppContext = React.createContext();
 const AppProvider = ({ children }) => {
-  const [isPromo, setIsPromo] = useState(true);
+  const [isPromo, setIsPromo] = useState(false);
   const [isSubmenu, setIsSubmenu] = useState(false);
   const [submenuContent, setSubmenuContent] = useState([]);
   const [location, setLocation] = useState(0);
@@ -19,7 +18,7 @@ const AppProvider = ({ children }) => {
   const showNavLink = (id, position) => {
     showSubmenu();
     setLocation(position);
-    const nav = nav_menu.filter((menu) => menu.id == id);
+    const nav = nav_menu.filter((menu) => menu.id === id);
     setSubmenuContent(nav[0].links);
   };
   return (
