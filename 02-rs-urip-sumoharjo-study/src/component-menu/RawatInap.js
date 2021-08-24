@@ -54,7 +54,6 @@ const RawatInapRoom = ({ id, kelas, pasien, harga, img, fasilitas }) => {
   const [showRoomDetail, setShowRoomDetail] = useState(false);
 
   const toggleRoomDetail = (e) => {
-    console.log(e);
     setShowRoomDetail(!showRoomDetail);
   };
   return (

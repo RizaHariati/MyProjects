@@ -1,6 +1,6 @@
 const data_pelayanan = [
   {
-    id: "layan1",
+    id: "lay1",
     title: "Poliklinik",
     img: "admin",
     hari: "Senin s/d Sabtu",
@@ -19,7 +19,7 @@ const data_pelayanan = [
     ],
   },
   {
-    id: "layan2",
+    id: "lay2",
     title: "Rawat Jalan",
     img: "instalasi-gawat-darurat",
     hari: "Senin s/d Sabtu",
@@ -36,7 +36,7 @@ const data_pelayanan = [
     ],
   },
   {
-    id: "layan3",
+    id: "lay3",
     title: "Fisioterapi",
     img: "fisioterapi",
     hari: "Senin s/d Jum'at",
@@ -49,7 +49,7 @@ const data_pelayanan = [
     ],
   },
   {
-    id: "layan4",
+    id: "lay4",
     title: "Hemodialisa",
     img: "hemodialisa",
     hari: "Senin s/d Sabtu",

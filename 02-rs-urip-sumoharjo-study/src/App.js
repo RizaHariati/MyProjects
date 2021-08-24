@@ -5,7 +5,10 @@ import About from "./pages/About";
 import Main1 from "./pages/Main1";
 import Main2 from "./pages/Main2";
 import Nav from "./component-main/Nav";
+import { useGlobalContext } from "./context";
+import Modal from "./component-main/Modal";
 const App = () => {
+  const { modal } = useGlobalContext();
   return (
     <Router>
       <div className="main-container">
@@ -22,6 +25,7 @@ const App = () => {
             <About />
           </Route>
         </Switch>
+        {modal && <Modal />}
         <footer className="footer"></footer>
       </div>
     </Router>

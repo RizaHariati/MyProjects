@@ -33,10 +33,13 @@ const Promo = () => {
       <div className="promo-info-container">
         <h2>PPKM (Promo Peduli Kesehatan Masyarakat)</h2>
         <div className="promo-infos">
-          <div className="promo-info vaksin">
-            <div className="promo-info-image">
-              <img src="/assets/images/vaccination.jpg" alt="vaccine" />
-            </div>
+          <div
+            className="promo-info vaksin"
+            style={{
+              background:
+                "linear-gradient(135deg, #80ad6b15,  #80ad6b15, #80ad6bb6  45%,#80ad6b), url('/assets/images/vaccination.jpg') top/cover no-repeat",
+            }}
+          >
             <div className="promo-info-text">
               <h3>Swab Antigen</h3>
               <h4 style={{ textDecoration: "line-through" }}>Rp.250.000</h4>
@@ -44,14 +47,18 @@ const Promo = () => {
               <h4>Lebih detail..</h4>
             </div>
           </div>
-          <div className="promo-info test">
-            <div className="promo-info-image">
-              <img src="/assets/images/test.jpg" alt="test" />
-            </div>
+
+          <div
+            className="promo-info vaksin"
+            style={{
+              background:
+                "linear-gradient(135deg, #80ad6b15,  #80ad6b15, #80ad6bb6  45%,#80ad6b), url('/assets/images/test.jpg') top/cover no-repeat",
+            }}
+          >
             <div className="promo-info-text">
-              <h3>Jadwal vaksin gratis</h3>
-              <h4>Setiap hari Jumat s/d Minggu</h4>
-              <h4>Jam 08.00 - 15.00 WIB</h4>
+              <h3>Swab PCR</h3>
+              <h4 style={{ textDecoration: "line-through" }}>Rp.650.000</h4>
+              <h3>Hanya Rp.525.000</h3>
               <h4>Lebih detail..</h4>
             </div>
           </div>
