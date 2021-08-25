@@ -46,7 +46,7 @@ export const data_dokter = [
   },
   {
     id: "dok6",
-    nama: "Bintang Siregar, Sp.B (K) Onk",
+    nama: "Bintang Siregar, Sp.B Onk",
     waktu: "Pagi (khusus BPJS)",
     poli: "Bedah",
     hari: "Rabu (Khusus BPJS)",
@@ -127,7 +127,7 @@ export const data_dokter = [
   },
   {
     id: "dok15",
-    nama: "Riana Handayani, SP.JP (K) FIHA",
+    nama: "Riana Handayani, SP.JP FIHA",
     waktu: "Siang",
     poli: "Jantung dan Pembuluh Darah",
     hari: "Senin, Rabu dan Jumat",
@@ -154,7 +154,7 @@ export const data_dokter = [
   },
   {
     id: "dok18",
-    nama: "Taufiqurrahman R, SP.OG (K)",
+    nama: "Taufiqurrahman R, SP.OG",
     waktu: "Pagi (On Call)",
     poli: "Kandungan",
     hari: "Rabu dan Jumat (On Call)",
@@ -181,7 +181,7 @@ export const data_dokter = [
   },
   {
     id: "dok21",
-    nama: "Dino Rinaldi, Sp.OG (K) Onk",
+    nama: "Dino Rinaldi, Sp.OG Onk",
     waktu: "Siang",
     poli: "Onkologi",
     hari: "Jum'at",
@@ -190,7 +190,7 @@ export const data_dokter = [
   },
   {
     id: "dok22",
-    nama: "Rachmadi, Sp.B (K) Onk",
+    nama: "Rachmadi, Sp.B Onk",
     waktu: "Siang (Khusus BPJS)",
     poli: "Onkologi",
     hari: "Senin (Khusus BPJS)",
@@ -370,7 +370,7 @@ export const data_dokter = [
   },
   {
     id: "dok42",
-    nama: "Khairani, Sp. THT",
+    nama: "Khairani, Sp.THT",
     waktu: "Pagi (On Call)",
     poli: "Telinga Hidung Tenggorokan",
     hari: "Minggu (On Call)",

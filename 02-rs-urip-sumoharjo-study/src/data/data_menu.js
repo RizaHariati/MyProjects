@@ -45,73 +45,25 @@ const main_menu = [
 
 const nav_menu = [
   {
-    id: "nav0",
-    btn: "nav-btn emergency",
-    icon: "fa fa-ambulance",
-    title: "Ambulans",
-    links: [
-      {
-        index: "link01",
-        link: "(0721)700323 untuk Ambulans",
-        path: "/",
-      },
-    ],
+    index: "link01",
+    link: "Tentang Urip Soemoharjo",
+    path: "/about",
   },
   {
-    id: "nav1",
-    btn: "nav-btn ",
-    icon: "fa fa-phone",
-    title: "Hubungi admin",
-    links: [
-      {
-        index: "link01",
-        link: "WhatsApp :0821-7796-3700 ",
-        path: "/api.whatsapp.com/send/?phone=6282177963700&text&app_absent=0",
-      },
-      {
-        index: "link02",
-        link: "Phone :(0721) 771322 / 771323 ",
-        path: "/",
-      },
-      {
-        index: "link03",
-        link: "Fax :(0721) 707990 / 700323",
-        path: "/",
-      },
-      {
-        index: "link04",
-        link: "Email :info@rsuripsumoharjo.com",
-        path: "/",
-      },
-    ],
+    index: "link02",
+    link: "Hak dan Kewajiban Pasien",
+    path: "/hak",
   },
   {
-    id: "nav2",
-    btn: "nav-btn ",
-    icon: "fa fa-bars",
-    title: "Menu",
-    links: [
-      {
-        index: "link01",
-        link: "Tentang Urip Soemoharjo",
-        path: "/about",
-      },
-      {
-        index: "link02",
-        link: "Hak dan Kewajiban Pasien",
-        path: "/hak",
-      },
-      {
-        index: "link03",
-        link: "Penghargaan",
-        path: "/penghargaan",
-      },
-      {
-        index: "link04",
-        link: "Lowongan Kerja",
-        path: "/lowongan",
-      },
-    ],
+    index: "link03",
+    link: "Penghargaan",
+    path: "/penghargaan",
+  },
+  {
+    index: "link04",
+    link: "Lowongan Kerja",
+    path: "/lowongan",
   },
 ];
+
 export { main_menu, nav_menu };

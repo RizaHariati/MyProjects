@@ -3,7 +3,7 @@ import { useGlobalContext } from "../context";
 
 const Promo = () => {
   const { isPromo, setIsPromo } = useGlobalContext();
-  const { hideSubmenu } = useGlobalContext();
+
   const refPromo = useRef(null);
   useEffect(() => {
     if (isPromo) {
@@ -13,12 +13,7 @@ const Promo = () => {
     }
   }, [isPromo]);
   return (
-    <div
-      className="promo"
-      ref={refPromo}
-      onMouseOver={hideSubmenu}
-      onWheel={() => setIsPromo(false)}
-    >
+    <div className="promo" ref={refPromo} onWheel={() => setIsPromo(false)}>
       <div className="promo-header">
         <h4>
           <i className="fa fa-exclamation-triangle"></i>

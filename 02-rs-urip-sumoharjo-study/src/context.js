@@ -1,12 +1,9 @@
 import React, { useState, useContext, useRef, useEffect } from "react";
-import { nav_menu } from "./data/data_menu";
 import { data_dokter } from "./data/data_dokter";
 const AppContext = React.createContext();
 const AppProvider = ({ children }) => {
   const [isPromo, setIsPromo] = useState(false);
   const [isSubmenu, setIsSubmenu] = useState(false);
-  const [submenuContent, setSubmenuContent] = useState([]);
-  const [location, setLocation] = useState(0);
   const [modal, setModal] = useState(false);
   const [modalID, setModalID] = useState("");
   const [term, setTerm] = useState({ termName: "all", key: "all" });
@@ -31,9 +28,9 @@ const AppProvider = ({ children }) => {
     if (termName === "special") {
       newData = data_dokter.filter((data) => data.poli === key);
     } else if (termName === "dokter") {
-      newData = data_dokter.filter((data) =>
-        data.nama.toLowerCase().match(key.toLowerCase())
-      );
+      newData = data_dokter.filter((data) => {
+        return data.nama.toLowerCase().match(key.toLowerCase());
+      });
     }
     setDataDokter(newData);
   }, [term]);
@@ -44,13 +41,6 @@ const AppProvider = ({ children }) => {
 
   const hideSubmenu = () => {
     setIsSubmenu(false);
-  };
-
-  const showNavLink = (id, position) => {
-    showSubmenu();
-    setLocation(position);
-    const nav = nav_menu.filter((menu) => menu.id === id);
-    setSubmenuContent(nav[0].links);
   };
 
   const showModal = (id) => {
@@ -67,13 +57,10 @@ const AppProvider = ({ children }) => {
       value={{
         isPromo,
         setIsPromo,
-        showNavLink,
         isSubmenu,
         hideSubmenu,
         showSubmenu,
-        submenuContent,
         refNavBar,
-        location,
         modal,
         hideModal,
         showModal,

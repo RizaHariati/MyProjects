@@ -8,12 +8,12 @@ import Pelayanan from "../component-menu/Pelayanan";
 import DaftarPasien from "../component-menu/DaftarPasien";
 import Checkup from "../component-menu/Checkup";
 import DataPasien from "../component-menu/DataPasien";
-import { useGlobalContext } from "../context";
+
 const Main = () => {
   const { url } = useRouteMatch();
-  const { hideSubmenu } = useGlobalContext();
+
   return (
-    <div className="container" onMouseOver={hideSubmenu}>
+    <div className="container">
       <div className="banner">
         <Switch>
           <Route exact path={`${url}`}>

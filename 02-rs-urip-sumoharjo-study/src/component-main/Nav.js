@@ -1,47 +1,40 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useGlobalContext } from "../context";
 import { nav_menu } from "../data/data_menu";
+import { useGlobalContext } from "../context";
+
 const Nav = () => {
-  const { showNavLink, isSubmenu } = useGlobalContext();
-  const handleMouse = (e) => {
-    const id = e.currentTarget.id;
-    e.preventDefault();
-    const location = e.currentTarget.getBoundingClientRect();
-    const right = location.right;
-    const left = location.left;
-    const width = e.view.innerWidth;
-
-    const position = width - location.width - (right + left) / 2;
-
-    showNavLink(id, position);
-  };
+  const { isSubmenu, showSubmenu, hideSubmenu } = useGlobalContext();
   return (
     <nav className="navbar">
       <Link to="/" className="logo">
         <img src="/assets/images/logo white.jpg" alt="logo" />
       </Link>
       <ul className="nav-links">
-        {nav_menu.map((menu) => {
-          const { id, btn, icon, title } = menu;
-          return (
-            <li key={id} id={id} onMouseOver={(e) => handleMouse(e)}>
-              <button className={btn}>
-                <i className={icon}></i>
-                <h4>{title}</h4>
-              </button>
-            </li>
-          );
-        })}
         <li>
-          <button className="nav-btn">
-            <Link to="/" className="main-link">
-              <i className="fa fa-home" style={{ fontSize: "2rem" }}></i>
-            </Link>
+          <button className="nav-btn emergency">
+            <i className="fa fa-ambulance"></i>
+            ambulans <span> (0721)700323 </span>
           </button>
         </li>
-        {isSubmenu && <Submenu />}
+
+        <li className="nav-menu">
+          <button className="nav-btn" onClick={() => showSubmenu()}>
+            <i className="fa fa-bars"></i>menu
+          </button>
+        </li>
+
+        <li>
+          <Link to="/" className="main-link">
+            <button className="nav-btn">
+              <i className="fa fa-home" style={{ fontSize: "2rem" }}>
+                <span></span>
+              </i>
+            </button>
+          </Link>
+        </li>
       </ul>
+      {isSubmenu && <Submenu />}
     </nav>
   );
 };
@@ -49,20 +42,39 @@ const Nav = () => {
 export default Nav;
 
 const Submenu = () => {
-  const { submenuContent, location } = useGlobalContext();
-
+  const { hideSubmenu } = useGlobalContext();
   return (
-    <ul className="nav-link" style={{ right: `${location}px` }}>
-      {submenuContent.map((submenu) => {
-        const { index, link, path } = submenu;
-        return (
-          <li key={index}>
-            <Link className="main-link" to={path}>
-              {link}
-            </Link>
-          </li>
-        );
-      })}
-    </ul>
+    <div className="nav-submenu">
+      <button className="nav-link-close" onClick={() => hideSubmenu()}>
+        <i className="fa fa-times"></i>
+      </button>
+      <div className="nav-social">
+        <a href="https://www.instagram.com/">
+          <i className="fa fa-instagram"></i>
+        </a>
+        <a href="https://www.facebook.com/">
+          <i className="fa fa-facebook"></i>
+        </a>
+        <a href="https://www.twitter.com/">
+          <i className="fa fa-twitter"></i>
+        </a>
+      </div>
+      <div className="nav-link">
+        {nav_menu.map((data) => {
+          const { index, link, path } = data;
+          return (
+            <div key={index} className="nav-link-list">
+              <Link to={path} className="nav-link-to">
+                {link}
+              </Link>
+              <div className="line"></div>
+            </div>
+          );
+        })}
+      </div>
+      <div className="nav-wave">
+        <img src="/assets/images/wave.jpg" alt="wave" />
+      </div>
+    </div>
   );
 };

@@ -6,6 +6,10 @@ const RawatInap = () => {
     <div className="banner ex-menu-content">
       <div className="background-utama"></div>
       <div className="ex-menu-header">
+        <h4 style={{ color: "var(--accent)" }}>
+          Jam besuk : Pagi Pukul 11.00 - 12.00 Wib || Sore Pukul 17.00 - 18.00
+          Wib
+        </h4>
         <h1>Rawat Inap</h1>
         <div className="line" />
         <h3>Pendaftaran Rawat Inap dan Pemesanan Kamar</h3>
@@ -33,10 +37,7 @@ const RawatInap = () => {
 
       <div className="rawat-inap-pilihan">
         <h2>Pilihan Kamar</h2>
-        <h4>
-          Jam besuk : Pagi Pukul 11.00 - 12.00 Wib || Sore Pukul 17.00 - 18.00
-          Wib
-        </h4>
+
         <div className="rawat-inap-rooms">
           {data_inap.map((data) => {
             const { id } = data;
