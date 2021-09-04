@@ -4,7 +4,7 @@ import { nav_menu } from "../data/data_menu";
 import { useGlobalContext } from "../context";
 
 const Nav = () => {
-  const { isSubmenu, showSubmenu, hideSubmenu } = useGlobalContext();
+  const { isSubmenu, showSubmenu } = useGlobalContext();
   return (
     <nav className="navbar">
       <Link to="/" className="logo">

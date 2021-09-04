@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { data_fasilitas } from "../data/data_layan";
 import { useGlobalContext } from "../context";
-import PelayananDetail from "./PelayananDetail";
+
 import FasilitasDetail from "./FasilitasDetail";
-const Pelayanan = () => {
+const Fasilitas = () => {
   const { showModal } = useGlobalContext();
   const [showFasilitas, setShowFasilitas] = useState(false);
   const [fasilitas, setFasilitas] = useState({ id: "", title: "" });
@@ -24,10 +24,10 @@ const Pelayanan = () => {
       <div className="ex-menu-header">
         <h1>Pelayanan & Fasilitas</h1>
         <div className="line" />
-        <h3>Barisan Garda Depan Kami Siap Melayani </h3>
-        <h3>Dengan Dukungan Fasilitas yang Mumpuni</h3>
+        <h3>Selalu mengikuti perkembangan Teknologi</h3>
+        <h3>dalam menyediakan Fasilitas Medis dan Non Medis Terbaik</h3>
       </div>
-      <PelayananDetail />
+      <div className="ex-menu-subhead"></div>
       <div className="search-container">
         <div className="form-search">
           <label htmlFor="search-fasilitas" className="search-label">
@@ -75,4 +75,4 @@ const Pelayanan = () => {
   );
 };
 
-export default Pelayanan;
+export default Fasilitas;

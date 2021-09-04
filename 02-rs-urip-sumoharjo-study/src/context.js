@@ -1,8 +1,21 @@
 import React, { useState, useContext, useRef, useEffect } from "react";
 import { data_dokter } from "./data/data_dokter";
 const AppContext = React.createContext();
+const initValue = {
+  pendaftar: "",
+  usiaConsent: "",
+  hubungan: "",
+  telpPendaftar: "",
+  pasien: "",
+  alamat: "",
+  kodepos: "",
+  usia: "",
+  telpPasien: "",
+  fasilitas: "",
+};
+
 const AppProvider = ({ children }) => {
-  const [isPromo, setIsPromo] = useState(false);
+  const [isPromo, setIsPromo] = useState(true);
   const [isSubmenu, setIsSubmenu] = useState(false);
   const [modal, setModal] = useState(false);
   const [modalID, setModalID] = useState("");
@@ -10,7 +23,10 @@ const AppProvider = ({ children }) => {
   const [dokterList, setDokterList] = useState(false);
   const [dataDokter, setDataDokter] = useState(data_dokter);
   const refNavBar = useRef(null);
-
+  const [daftarSendiri, setDaftarSendiri] = useState(true);
+  const [modalDaftar, setModalDaftar] = useState(false);
+  const [dataPasien, setdataPasien] = useState(initValue);
+  const [openModal, setOpenModal] = useState(false);
   const hideDokterList = () => {
     setDokterList(false);
   };
@@ -71,6 +87,15 @@ const AppProvider = ({ children }) => {
         hideDokterList,
         dokterList,
         dataDokter,
+        initValue,
+        setdataPasien,
+        dataPasien,
+        setDaftarSendiri,
+        daftarSendiri,
+        modalDaftar,
+        setModalDaftar,
+        openModal,
+        setOpenModal,
       }}
     >
       {children}

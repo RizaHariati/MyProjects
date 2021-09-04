@@ -4,7 +4,7 @@ import Home from "../component-menu/Home";
 import Menu from "../Menu";
 import RawatInap from "../component-menu/RawatInap";
 import Dokter from "../component-menu/Dokter";
-import Pelayanan from "../component-menu/Pelayanan";
+import Fasilitas from "../component-menu/Fasilitas";
 import DaftarPasien from "../component-menu/DaftarPasien";
 import Checkup from "../component-menu/Checkup";
 import DataPasien from "../component-menu/DataPasien";
@@ -22,8 +22,8 @@ const Main = () => {
           <Route path={`${url}/rawatinap`}>
             <RawatInap />
           </Route>
-          <Route path={`${url}/pelayanan`}>
-            <Pelayanan />
+          <Route path={`${url}/fasilitas`}>
+            <Fasilitas />
           </Route>
           <Route path={`${url}/dokter`}>
             <Dokter />

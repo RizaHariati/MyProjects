@@ -53,6 +53,7 @@ const Dokter = () => {
         <h3>Temukan Jadwal Dokter sesuai kebutuhan medis Anda</h3>
         <h3>Berdasarkan Nama maupun Spesialisasi</h3>
       </div>
+      <div className="ex-menu-subhead"></div>
       <div className="search-container dokter">
         <div className="form-search">
           <label htmlFor="search-spesialis" className="search-label">

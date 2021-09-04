@@ -17,6 +17,7 @@ const RawatInap = () => {
           Buka setiap hari (24 jam) <i className="fa fa-phone" /> 0811 7270 537
         </h3>
       </div>
+      <div className="ex-menu-subhead"></div>
       <div className="ex-menu-intro">
         <div className="image">
           <img

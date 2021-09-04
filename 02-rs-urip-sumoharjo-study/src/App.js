@@ -7,8 +7,11 @@ import Main2 from "./pages/Main2";
 import Nav from "./component-main/Nav";
 import { useGlobalContext } from "./context";
 import Modal from "./component-main/Modal";
+import ModalPendaftaran from "./component-main/ModalPendaftaran";
+
 const App = () => {
-  const { modal } = useGlobalContext();
+  const { modal, modalDaftar } = useGlobalContext();
+
   return (
     <Router>
       <div className="main-container">
@@ -26,6 +29,7 @@ const App = () => {
           </Route>
         </Switch>
         {modal && <Modal />}
+        {modalDaftar && <ModalPendaftaran />}
         <footer className="footer"></footer>
       </div>
     </Router>
