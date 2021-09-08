@@ -1,9 +1,18 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { Link, useRouteMatch } from "react-router-dom";
 import { useGlobalContext } from "../context";
-
+import { home_slider } from "../data/data_menu";
 const Promo = () => {
-  const { isPromo, setIsPromo } = useGlobalContext();
+  const { isPromo, setIsPromo, showModal } = useGlobalContext();
+  const [newUrl, setNewUrl] = useState("");
+  const { url } = useRouteMatch();
+  const data = home_slider.slice(2, 4);
 
+  useEffect(() => {
+    if (url === "/") {
+      setNewUrl("/home");
+    }
+  }, [url]);
   const refPromo = useRef(null);
   useEffect(() => {
     if (isPromo) {
@@ -21,42 +30,36 @@ const Promo = () => {
         </h4>
         <button className="promo-btn" onClick={() => setIsPromo(!isPromo)}>
           <i
-            className={isPromo ? `fa fa-chevron-down` : `fa fa-chevron-up`}
+            className={isPromo ? `fa fa-chevron-up` : `fa fa-chevron-down`}
           ></i>
         </button>
       </div>
       <div className="promo-info-container">
         <h2>PPKM (Promo Peduli Kesehatan Masyarakat)</h2>
         <div className="promo-infos">
-          <div
-            className="promo-info vaksin"
-            style={{
-              background:
-                "linear-gradient(135deg, #80ad6b15,  #80ad6b15, #80ad6bb6  45%,#80ad6b), url('/assets/images/vaccination.jpg') top/cover no-repeat",
-            }}
-          >
-            <div className="promo-info-text">
-              <h3>Swab Antigen</h3>
-              <h4 style={{ textDecoration: "line-through" }}>Rp.250.000</h4>
-              <h3>Hanya Rp.150.000</h3>
-              <h4>Lebih detail..</h4>
-            </div>
-          </div>
-
-          <div
-            className="promo-info vaksin"
-            style={{
-              background:
-                "linear-gradient(135deg, #80ad6b15,  #80ad6b15, #80ad6bb6  45%,#80ad6b), url('/assets/images/test.jpg') top/cover no-repeat",
-            }}
-          >
-            <div className="promo-info-text">
-              <h3>Swab PCR</h3>
-              <h4 style={{ textDecoration: "line-through" }}>Rp.650.000</h4>
-              <h3>Hanya Rp.525.000</h3>
-              <h4>Lebih detail..</h4>
-            </div>
-          </div>
+          {data.map((item) => {
+            const { index, title1, title2, img, harga } = item;
+            return (
+              <Link
+                key={index}
+                to={`${newUrl}/checkup`}
+                onClick={() => showModal(index)}
+              >
+                <div
+                  className="promo-info vaksin"
+                  style={{
+                    background: `linear-gradient(135deg, #80ad6b15,  #80ad6b15, #80ad6bb6  45%,#80ad6b), url('/assets/images/home/${img}') center/cover no-repeat`,
+                  }}
+                >
+                  <div className="promo-info-text">
+                    <h3>{title1}</h3>
+                    <h4 style={{ textDecoration: "line-through" }}>{harga}</h4>
+                    <h3>{title2}</h3>
+                  </div>
+                </div>
+              </Link>
+            );
+          })}
         </div>
       </div>
     </div>

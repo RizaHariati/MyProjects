@@ -37,6 +37,7 @@ const Main = () => {
           <Route path={`${url}/dataPasien`}>
             <DataPasien />
           </Route>
+
           <Route path="*">
             <Home />
           </Route>

@@ -11,8 +11,9 @@ const Main = () => {
   useEffect(() => {
     if (url === "/") {
       setNewUrl("/home");
+    } else {
+      setNewUrl(url);
     }
-    setNewUrl(url);
   }, [url]);
   return (
     <div className="container">

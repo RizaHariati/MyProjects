@@ -4,7 +4,7 @@ import { nav_menu } from "../data/data_menu";
 import { useGlobalContext } from "../context";
 
 const Nav = () => {
-  const { isSubmenu, showSubmenu } = useGlobalContext();
+  const { isSubmenu, showSubmenu, hideSubmenu } = useGlobalContext();
   return (
     <nav className="navbar">
       <Link to="/" className="logo">
@@ -25,7 +25,7 @@ const Nav = () => {
         </li>
 
         <li>
-          <Link to="/" className="main-link">
+          <Link to="/" className="main-link" onClick={() => hideSubmenu()}>
             <button className="nav-btn">
               <i className="fa fa-home" style={{ fontSize: "2rem" }}>
                 <span></span>
@@ -64,7 +64,11 @@ const Submenu = () => {
           const { index, link, path } = data;
           return (
             <div key={index} className="nav-link-list">
-              <Link to={path} className="nav-link-to">
+              <Link
+                to={path}
+                className="nav-link-to"
+                onClick={() => hideSubmenu()}
+              >
                 {link}
               </Link>
               <div className="line"></div>

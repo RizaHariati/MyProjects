@@ -5,6 +5,8 @@ import About from "./pages/About";
 import Main1 from "./pages/Main1";
 import Main2 from "./pages/Main2";
 import Nav from "./component-main/Nav";
+import HakKewajiban from "./pages/HakKewajiban";
+import Lowongan from "./pages/Lowongan";
 import { useGlobalContext } from "./context";
 import Modal from "./component-main/Modal";
 import ModalPendaftaran from "./component-main/ModalPendaftaran";
@@ -26,6 +28,12 @@ const App = () => {
           </Route>
           <Route path="/about">
             <About />
+          </Route>
+          <Route path="/hakkewajiban">
+            <HakKewajiban />
+          </Route>
+          <Route path={`/lowongan`}>
+            <Lowongan />
           </Route>
         </Switch>
         {modal && <Modal />}

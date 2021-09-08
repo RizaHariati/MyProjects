@@ -66,7 +66,9 @@ const Dokter = () => {
               name="search-spesialis"
               id="search-spesialis"
               value={
-                term.termName === "special" ? term.key : "silahkan pilih.."
+                term.termName === "special"
+                  ? term.key
+                  : "silahkan pilih spesialisasi.."
               }
               readOnly
             />

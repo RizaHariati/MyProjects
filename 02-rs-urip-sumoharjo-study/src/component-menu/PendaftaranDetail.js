@@ -3,7 +3,6 @@ import { Field, Formik, Form, ErrorMessage } from "formik";
 import { useGlobalContext } from "../context";
 
 import * as Yup from "yup";
-import DaftarPasien from "./DaftarPasien";
 
 const PendaftaranDetail = () => {
   const {
